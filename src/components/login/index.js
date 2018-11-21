@@ -35,7 +35,7 @@ class Login extends React.Component {
       loading: true
     });
     http
-      .post("/login/admin", values)
+      .get("/", values)
       .then(res => {
         console.log(res);
         storage.setUser(res.data);
@@ -55,11 +55,10 @@ class Login extends React.Component {
     return (
       <div className="login">
         <div className="login-header">
-          <h1> TicTalk 桌上足球联赛报名 </h1>{" "}
-        </div>{" "}
+          <h1> TicTalk 桌上足球联赛报名 </h1>
+        </div>
         <Form onSubmit={this.handleLoginSubmit} className="login-form">
           <FormItem>
-            {" "}
             {getFieldDecorator("username", {
               validateTrigger: "onBlur",
               rules: [
@@ -85,10 +84,9 @@ class Login extends React.Component {
                 size="large"
                 placeholder="邮箱"
               />
-            )}{" "}
-          </FormItem>{" "}
+            )}
+          </FormItem>
           <FormItem>
-            {" "}
             {getFieldDecorator("password", {
               validateTrigger: "onBlur",
               rules: [
@@ -111,8 +109,8 @@ class Login extends React.Component {
                 type="password"
                 placeholder="密码"
               />
-            )}{" "}
-          </FormItem>{" "}
+            )}
+          </FormItem>
           <FormItem
             style={{
               marginTop: "40px"
@@ -125,19 +123,19 @@ class Login extends React.Component {
               htmlType="submit"
               className="login-form-button"
             >
-              登录{" "}
-            </Button>{" "}
-          </FormItem>{" "}
-        </Form>{" "}
+              登录
+            </Button>
+          </FormItem>
+        </Form>
         <div className="login-footer">
           <a
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.tictalk.com"
           >
-            Copyright© 2018 TicTalk{" "}
-          </a>{" "}
-        </div>{" "}
+            Copyright© 2018 TicTalk
+          </a>
+        </div>
       </div>
     );
   }

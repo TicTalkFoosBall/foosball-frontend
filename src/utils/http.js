@@ -1,17 +1,11 @@
-import axios from 'axios';
-import { notification } from 'antd';
-import storage from 'utils/storage';
+import axios from "axios";
+import { notification } from "antd";
+import storage from "utils/storage";
 
 // 新老版本切换按钮
 const newVersion = false;
 
-let domain = '';
-
-if (newVersion) {
-  domain = 'http://tanka-drf-admin.dev.tictalk.pro:8080';
-} else {
-  domain = 'https://api-admin-tanka-stage.tictalk.com';
-}
+let domain = "http://127.0.0.1:5000";
 
 export const baseURL = `${domain}`;
 
@@ -38,7 +32,7 @@ http.interceptors.response.use(
   error => {
     const { response = {} } = error;
     notification.error({
-      message: (response.data && response.data.error) || '请求失败',
+      message: (response.data && response.data.error) || "请求失败",
       description: error.message
     });
     return Promise.reject(error);

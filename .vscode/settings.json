@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.css": "postcss",
+    "*.js": "javascriptreact"
+  },
+  "prettier.eslintIntegration": true
+}
