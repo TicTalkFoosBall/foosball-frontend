@@ -35,11 +35,11 @@ class Login extends React.Component {
       loading: true
     });
     http
-      .get("/", values)
+      .post("/login", values)
       .then(res => {
         console.log(res);
         storage.setUser(res.data);
-        this.props.history.push("/users");
+        this.props.history.push("/rank");
       })
       .finally(() => {
         // TODO:cancel setState when success
@@ -55,11 +55,11 @@ class Login extends React.Component {
     return (
       <div className="login">
         <div className="login-header">
-          <h1> TicTalk 桌上足球联赛报名 </h1>
+          <h1> TicTalk 桌上足球联赛 </h1>
         </div>
         <Form onSubmit={this.handleLoginSubmit} className="login-form">
           <FormItem>
-            {getFieldDecorator("username", {
+            {getFieldDecorator("account", {
               validateTrigger: "onBlur",
               rules: [
                 {
@@ -82,7 +82,7 @@ class Login extends React.Component {
                   />
                 }
                 size="large"
-                placeholder="邮箱"
+                placeholder="账号"
               />
             )}
           </FormItem>

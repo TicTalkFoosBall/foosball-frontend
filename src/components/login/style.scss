@@ -5,7 +5,8 @@
   align-items: center;
   height: 100vh;
   overflow: auto;
-  background: url('https://tictalk-foosball.oss-cn-hangzhou.aliyuncs.com/background.jpg') no-repeat;
+  background: url("https://tictalk-foosball.oss-cn-hangzhou.aliyuncs.com/background.jpg")
+    no-repeat;
   background-size: cover;
 
   &-header {
@@ -15,7 +16,7 @@
     h1 {
       font-size: 64px;
       font-weight: bold;
-      color: #EEEEEE;
+      color: #000000;
     }
 
     p {

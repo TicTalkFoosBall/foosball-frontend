@@ -2,10 +2,7 @@ import axios from "axios";
 import { notification } from "antd";
 import storage from "utils/storage";
 
-// 新老版本切换按钮
-const newVersion = false;
-
-let domain = "http://127.0.0.1:5000";
+let domain = "http://shenzeming.com";
 
 export const baseURL = `${domain}`;
 
@@ -13,8 +10,6 @@ const http = axios.create({
   baseURL,
   timeout: 20000
 });
-
-http.newVersion = newVersion;
 
 http.interceptors.request.use(request => {
   const token = storage.getToken();
